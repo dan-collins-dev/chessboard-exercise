@@ -26,3 +26,7 @@
 .odd-row.tile:nth-of-type(2n) {
     background-color: white;
 }
+
+#btn-area {
+    margin-top: 1rem;
+}

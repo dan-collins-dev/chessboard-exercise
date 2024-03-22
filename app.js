@@ -1,4 +1,5 @@
 const board = document.getElementById("board");
+const btn = document.getElementById("animate-btn");
 
 const tiles = [];
 
@@ -14,6 +15,13 @@ for (let row = 0; row < 8; row++) {
     }
 }
 
-for (let tile of tiles) {
-    board.appendChild(tile);
-}
+btn.addEventListener("click", function () {
+    let count = 0;
+    const intervalId = setInterval(function () {
+        board.appendChild(tiles[count]);
+        count++;
+        if (count >= tiles.length) {
+            clearInterval(intervalId);
+        }
+    }, 100);
+});
